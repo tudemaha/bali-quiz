@@ -2,7 +2,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.hero {
+#hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
         url("/img/hero.jpeg");
     background-repeat: no-repeat;
@@ -11,25 +11,17 @@ body {
 }
 
 .hero-text {
-    margin: 0 12rem;
+    margin: 0 8rem;
 }
 
-#instruction {
-    /* background-color: #fff5d8; */
-    padding: 2rem 5rem;
-}
-
-#goal {
-    padding: 2rem 5rem;
+#header {
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 .section-img {
     border-radius: 42% 58% 70% 30% / 46% 39% 61% 54%;
     box-shadow: -1px 11px 40px 4px #fdebb5;
-}
-
-#header {
-    font-size: 4rem;
 }
 
 .bg-theme-primary {
