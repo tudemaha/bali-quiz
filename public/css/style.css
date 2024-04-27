@@ -35,3 +35,14 @@ body {
 footer {
     overflow: hidden;
 }
+
+.form-check-input:checked {
+    background-color: #ffc107;
+    border-color: hsl(45, 85%, 79%);
+}
+
+.form-check-input:focus,
+.form-control:focus {
+    border-color: hsl(45, 85%, 79%);
+    box-shadow: 0 0 0 0.2rem hsl(44, 84%, 91%);
+}

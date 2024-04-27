@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('body')
-  <section id="hero">
+  <section id="hero" class="mt-4">
     <div class="container">
       <div class="row vh-100 align-items-center justify-content-center">
         <div class="col text-center hero-text">
@@ -45,11 +45,5 @@
     </div>
   </section>
 
-	<footer class="bg-theme-secondary">
-		<div class="row justify-content-center py-3 mt-2">
-			<div class="col text-center">
-				<p>Copyright &copy; 2024 | All Right Reserved</p>
-			</div>
-		</div>
-	</footer>
+  @include('partials.footer')
 @endsection
