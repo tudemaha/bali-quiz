@@ -13,3 +13,7 @@ Route::get('/login', function() {
 Route::get('/register', function() {
     return view('register', ["title" => "Register"]);
 });
+
+Route::get('/quiz', function() {
+    return view('quiz', ["title" => "Quiz"]);
+});

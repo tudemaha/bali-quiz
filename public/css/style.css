@@ -2,7 +2,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-#hero {
+.background-full {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
         url("/img/hero.jpeg");
     background-repeat: no-repeat;
@@ -32,7 +32,8 @@ body {
     background-color: #fdebb5;
 }
 
-footer {
+footer,
+progress {
     overflow: hidden;
 }
 
@@ -45,4 +46,14 @@ footer {
 .form-control:focus {
     border-color: hsl(45, 85%, 79%);
     box-shadow: 0 0 0 0.2rem hsl(44, 84%, 91%);
+}
+
+#counter {
+    background-color: white;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+}
+
+#progress-counter {
+    padding-top: 4.5rem;
 }

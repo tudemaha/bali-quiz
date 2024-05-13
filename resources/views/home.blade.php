@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('body')
-  <section id="hero" class="mt-4">
+  <section id="hero" class="mt-4 background-full">
     <div class="container">
       <div class="row vh-100 align-items-center justify-content-center">
         <div class="col text-center hero-text">
