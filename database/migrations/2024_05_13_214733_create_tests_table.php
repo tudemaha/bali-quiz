@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Answer;
+use App\Models\Question;
+use App\Models\Test;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,15 +19,15 @@ return new class extends Migration
             $table->id();
             $table->timestamp('time');
             $table->float('score');
-            $table->foreignId('user_id');
+            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
 
         Schema::create('test_details', function(Blueprint $table) {
             $table->id();
-            $table->foreignId('test_id');
-            $table->foreignId('question_id');
-            $table->foreignId('answer_id');
+            $table->foreignIdFor(Test::class);
+            $table->foreignIdFor(Question::class);
+            $table->foreignIdFor(Answer::class);
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id',
+        'master_role_id',
     ];
 
     /**
@@ -42,7 +42,7 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'role_id' => 'boolean',
+            'master_role_id' => 'boolean',
         ];
     }
 
@@ -52,7 +52,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $attributes = [
-        'role_id' => 2,
+        'master_role_id' => 2,
     ];
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,4 @@ Route::get('/register', function() {
     return view('register', ["title" => "Register"]);
 });
 
-Route::get('/quiz', function() {
-    return view('quiz', ["title" => "Quiz"]);
-});
+Route::get('/quiz', [QuizController::class, 'index']);

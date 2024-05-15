@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Question;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->id();
             $table->text('answer');
             $table->boolean('is_true');
-            $table->foreignId('question_id');
+            $table->foreignIdFor(Question::class);
             $table->timestamps();
         });
     }

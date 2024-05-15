@@ -43,7 +43,8 @@
         </div>
       </div>
     </div>
-  </section>
 
   @include('partials.footer')
+
+  <script src="js/index.js"></script>
 @endsection

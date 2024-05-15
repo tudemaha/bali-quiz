@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             'name' => env('ADMIN_NAME'),
             'username' => env('ADMIN_USERNAME'),
             'password' => bcrypt(env('ADMIN_PASSWORD')),
-            'role_id' => 1,
+            'master_role_id' => 1,
         ];
 
         User::create($admin);
