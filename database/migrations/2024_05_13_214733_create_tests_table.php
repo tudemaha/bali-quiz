@@ -17,9 +17,9 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('time');
-            $table->float('score');
             $table->foreignIdFor(User::class);
+            $table->float('score');
+            $table->integer('answered');
             $table->timestamps();
         });
 

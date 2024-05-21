@@ -27,7 +27,7 @@
 
   <script >
     const questions = {!! $questions !!};
-    const question_test = questions;
+    const test_id = {{ $test_id }}
     const questions_raw = JSON.stringify(questions);
     if(!sessionStorage.getItem('questions')) {
       sessionStorage.setItem('questions', questions_raw);
@@ -35,7 +35,11 @@
     if(!sessionStorage.getItem('current_num')) {
       sessionStorage.setItem('current_num', 1);
     }
+    if(!sessionStorage.getItem('test_id')) {
+      sessionStorage.setItem('test_id', test_id);
+    }
   </script>
 
   <script src="js/quiz.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

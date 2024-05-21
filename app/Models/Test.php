@@ -12,9 +12,14 @@ class Test extends Model
     use HasFactory;
 
     protected $fillable = [
-        'time',
         'user_id',
         'score',
+        'answered',
+    ];
+
+    protected $attributes = [
+        'score' => 0,
+        'answered' => 0,
     ];
 
     public function user(): BelongsTo {

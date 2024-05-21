@@ -18,14 +18,40 @@ const checkFinishQuiz = () => {
     return false;
 }
 
-const fetchResult = (answerObj) => {
+const fireSwal = (answerState) => {
+    return Swal.fire({
+        title: answerState ? 'Hore, Benar!😆' : 'Yah, Salah😣',
+        icon: answerState ? 'success' : 'error',
+        timer: 2000,
+        timerProgressBar: true,
+        allowOutsideClick: false,
+        allowEnterKey: false,
+        allowEscapeKey: false,
+        didOpen: () => {
+            Swal.showLoading();
+        },
+    });
+};
+
+const fetchResult = async (answerObj) => {
     current_num++;
     sessionStorage.setItem('current_num', current_num);
     clearInterval(interval);
-    if(checkFinishQuiz()) return
 
-    setQuizValue();
-    console.log(answerObj);
+    const res = await fetch('/api/quiz', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(answerObj),
+    })
+        .then((response) => response.json());
+
+    fireSwal(res.is_true)
+        .then(() => {
+            if(checkFinishQuiz()) return
+            setQuizValue();
+        });
 }
 
 const setTimer = () => {
@@ -67,6 +93,7 @@ const setQuizValue = () => {
         answerBtn.innerHTML = answer.answer;
         answerBtn.onclick = () => {
             fetchResult({
+                test_id: parseInt(sessionStorage.getItem('test_id')),
                 question_id: questions_json[current_num - 1]['id'],
                 answer_id: answer.id,
             });
