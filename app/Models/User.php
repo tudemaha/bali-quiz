@@ -20,9 +20,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'username',
         'password',
-        'master_role_id',
     ];
 
     /**
@@ -33,18 +32,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
-
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'master_role_id' => 'boolean',
-        ];
-    }
 
     /**
      * The model's default values for attributes.

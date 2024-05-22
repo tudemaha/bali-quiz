@@ -11,7 +11,7 @@ let interval;
 
 const checkFinishQuiz = () => {
     if(current_num > total_question) {
-        window.open("/", "_self");
+        window.open(`/result/${parseInt(sessionStorage.getItem('test_id'))}`, "_self");
         sessionStorage.clear();
         return true;
     }
@@ -22,7 +22,7 @@ const fireSwal = (answerState) => {
     return Swal.fire({
         title: answerState ? 'Hore, Benar!😆' : 'Yah, Salah😣',
         icon: answerState ? 'success' : 'error',
-        timer: 2000,
+        timer: 1500,
         timerProgressBar: true,
         allowOutsideClick: false,
         allowEnterKey: false,

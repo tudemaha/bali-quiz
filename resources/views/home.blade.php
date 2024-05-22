@@ -7,6 +7,11 @@
         <div class="col text-center hero-text">
           <h1 id="header" class="text-white">BaliQuiz</h1>
           <p class="fs-5 text-white text-opacity-75">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore id laborum laboriosam at quia quidem corrupti similique facilis voluptas? Iure exercitationem, velit dignissimos nesciunt debitis nisi rerum fuga doloribus accusamus.</p>
+          @auth
+            @if(auth()->user()->master_role_id == 2)
+              <a class="btn btn-warning btn-lg" href="/quiz">Mulai Quiz!</a>
+            @endif
+          @endauth
         </div>
       </div>
     </div>

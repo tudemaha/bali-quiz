@@ -57,3 +57,16 @@ progress {
 #progress-counter {
     padding-top: 4.5rem;
 }
+
+.score {
+    font-size: 8rem;
+}
+
+.page-link {
+    color: #595c5f;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}

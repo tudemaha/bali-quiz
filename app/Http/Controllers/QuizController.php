@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Models\TestDetail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class QuizController extends Controller
 {
@@ -19,7 +20,7 @@ class QuizController extends Controller
             ])->get(['id', 'question', 'duration']);
         
         $test = Test::create([
-            'user_id' => 1,
+            'user_id' => auth()->user()->id,
         ]);
 
         return view('quiz', [
@@ -50,5 +51,19 @@ class QuizController extends Controller
         $test->save();
 
         return response()->json(['status' => true, 'is_true' => $is_true]);
+    }
+
+    public function result(Test $test): View {
+        if(!Gate::allows('get-result', $test)) {
+            abort(403);
+        }
+
+        $total = Question::all()->count();
+
+        return view('result', [
+            'title' => 'Result',
+            'score' => $test->score,
+            'total' => $total,
+        ]);
     }
 }
